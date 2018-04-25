@@ -1,0 +1,28 @@
+{
+    "name": "vue_todo_app",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.ts",
+    "scripts": {
+        "build": "webpack",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "css-loader": "^0.28.11",
+        "hamljs": "^0.6.2",
+        "ts-loader": "^4.2.0",
+        "typescript": "^2.8.1",
+        "vue": "^2.5.16",
+        "vue-loader": "^14.2.2",
+        "vue-template-compiler": "^2.5.16",
+        "vuex": "^3.0.1",
+        "webpack": "^4.5.0",
+        "webpack-cli": "^2.0.14"
+    },
+    "dependencies": {
+        "haml-loader": "^0.1.0",
+        "vue-router": "^3.0.1"
+    }
+}
