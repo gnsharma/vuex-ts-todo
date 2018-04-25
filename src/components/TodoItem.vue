@@ -1,9 +1,7 @@
 <template lang="haml">
 .card-panel
   %div
-    %label{"for": 'toggle'}
-      %input#toggle.filled-in{"type": 'checkbox', "id": 'checkbox', "v-bind:checked": 'todo.completed', "v-on:change": 'toggleTodo', "v-on:input": 'toggleTodo'}
-      %span 
+    %input{"type": 'checkbox', "id": 'checkbox', "v-on:click": 'toggleTodo'}
     %strong{"v-on:dblclick": 'editing = true'} {{ todo.title }}
     %button.red.lighten-1.btn.right{"v-on:click": 'deleteTodo'} Delete
   %input{"v-show": 'editing', "v-focus": 'editing', "v-bind:value": 'todo.title', "@keyup.enter": 'doneEdit', "@keyup.esc": 'cancelEdit', "@blur": 'doneEdit'}
@@ -33,7 +31,8 @@ export default Vue.extend({
 
 		methods: {
 				toggleTodo() {
-						this.$store.commit('toggleTodo', { todo: this.todo });
+					console.log("inside toggletodo");
+					this.$store.commit('toggleTodo', { todo: this.todo });
 				},
 				deleteTodo() {
 						this.$store.commit('deleteTodo', { todo: this.todo });
@@ -61,6 +60,8 @@ export default Vue.extend({
 
 <style>
 [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
-		pointer-events: auto;
+    position: relative;
+    opacity: 100;
+    pointer-events: auto;
 }
 </style>

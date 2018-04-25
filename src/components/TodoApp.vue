@@ -8,10 +8,8 @@
   %section.row{"v-show": 'todos.length'}
     .row.card-panel
       .col.s3
-        %label{"for": 'toggle-all'}
-          %input#toggle-all.filled-in{"type": 'checkbox', "v-bind:checked": 'allChecked', "v-on:change": 'toggleAllTodos'}
-          %span
-            %strong Toggle All
+        %input{"type": 'checkbox', "v-bind:checked": 'allChecked', "v-on:change": 'toggleAllTodos'}
+        %strong Toggle All
       .col.s3{"v-for": '(val, key) in filters'}
         %span
           %a.btn.blue{"v-bind:href": '"#/" + key', "v-on:click": 'visibility = key', "v-bind:class": '[ key === visibility ? "green" : "" ]'} {{ key.toUpperCase() }}
