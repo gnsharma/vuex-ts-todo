@@ -21,7 +21,7 @@
         %span
           %strong {{doneCount }} {{doneCount | pluralize('todo')}} done 
       .col.s4
-        %button.btn.h6.right.red{"v-show": 'todos.length ', "v-on:click": 'clearCompleted'} Clearcompleted
+        %button.btn.h6.right.red{"v-show": 'todos.length ', "v-on:click": 'clearCompleted'} Clear completed
       
   %section.row{"v-show": 'todos.length'}
     %todo-item{"v-for": '(todo, index) in filteredTodos', "v-bind:key": 'index', "v-bind:todo": 'todo'}

@@ -1,7 +1,7 @@
 <template lang="haml">
 .card-panel
   %div
-    %input{"type": 'checkbox', "id": 'checkbox', "v-on:click": 'toggleTodo'}
+    %input{"type": 'checkbox', "id": 'checkbox', "v-bind:checked": 'todo.completed', "v-on:click": 'toggleTodo'}
     %strong{"v-on:dblclick": 'editing = true'} {{ todo.title }}
     %button.red.lighten-1.btn.right{"v-on:click": 'deleteTodo'} Delete
   %input{"v-show": 'editing', "v-focus": 'editing', "v-bind:value": 'todo.title', "@keyup.enter": 'doneEdit', "@keyup.esc": 'cancelEdit', "@blur": 'doneEdit'}
