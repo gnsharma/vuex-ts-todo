@@ -13,46 +13,46 @@ import Vue from "vue";
 import { Todo } from '../index';
 
 export default Vue.extend({
-		props: ['todo'],
+    props: ['todo'],
 
-		data() {
-				return {
-						editing: false,	
-				};
-		},
+    data() {
+        return {
+            editing: false,
+        };
+    },
 
-		directives: {
-			focus (el, { value }) {
-						if (value) {
-								el.focus();
-						}
-				},
-		},
+    directives: {
+      focus (el, { value }) {
+            if (value) {
+                el.focus();
+            }
+        },
+    },
 
-		methods: {
-				toggleTodo() {
-					console.log("inside toggletodo");
-					this.$store.commit('toggleTodo', { todo: this.todo });
-				},
-				deleteTodo() {
-						this.$store.commit('deleteTodo', { todo: this.todo });
-				},
-				doneEdit(e: any) {
-						const value = e.target.value.trim();
-						const { todo } = this;
-						
-						if (!value) {
-								this.deleteTodo()
-						} else if (this.editing) {
-								this.$store.commit('editTodo', { todo, value });
-								this.editing = false;
-						}
-				},
-				cancelEdit(e: any) {
-						e.target.value = this.todo.title;
-						this.editing = false;
-				},
-		},
+    methods: {
+        toggleTodo() {
+          console.log("inside toggletodo");
+          this.$store.commit('toggleTodo', { todo: this.todo });
+        },
+        deleteTodo() {
+            this.$store.commit('deleteTodo', { todo: this.todo });
+        },
+        doneEdit(e: any) {
+            const value = e.target.value.trim();
+            const { todo } = this;
+
+            if (!value) {
+                this.deleteTodo()
+            } else if (this.editing) {
+                this.$store.commit('editTodo', { todo, value });
+                this.editing = false;
+            }
+        },
+        cancelEdit(e: any) {
+            e.target.value = this.todo.title;
+            this.editing = false;
+        },
+    },
 
 });
 

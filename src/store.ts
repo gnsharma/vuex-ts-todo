@@ -19,7 +19,7 @@ export default new Vuex.Store({
                 title,
             });
         },
-        
+
         editTodo(state, { todo, value }) {
             todo.title = value;
         },
@@ -27,11 +27,11 @@ export default new Vuex.Store({
         toggleTodo(state, { todo }) {
             todo.completed = !todo.completed;
         },
-        
+
         deleteTodo(state, { todo }) {
-            state.todos.splice(state.todos.indexOf(todo), 1);    
+            state.todos.splice(state.todos.indexOf(todo), 1);
         },
-        
+
         toggleAll(state, { completed }) {
             state.todos.forEach((todo) => {
                 todo.completed = completed;
@@ -55,4 +55,3 @@ export default new Vuex.Store({
     },
 
 });
-
